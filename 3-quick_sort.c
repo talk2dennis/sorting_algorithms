@@ -25,9 +25,9 @@ void swap(int *a, int *b)
  * Return: the partition index
  */
 
-int partintion(int array, int low, int high, size_t size)
+int partition(int *array, int low, int high, size_t size)
 {
-	int pivot, i, j, tmp;
+	int pivot, i, j;
 
 	pivot = high;
 	i = low - 1;
@@ -45,15 +45,15 @@ int partintion(int array, int low, int high, size_t size)
 	return (i + 1);
 }
 
-void quick_sort(int arr[], int low, int high, size_t size)
+void quickSort(int *array, int low, int high, size_t size)
 {
 	int index;
 
 	if (low < high)
 	{
 		index = partition(array, low, high, size);
-		quick_sort(array, low, index - 1, size);
-		quick_sort(array, index + 1, high, size);
+		quickSort(array, low, index - 1, size);
+		quickSort(array, index + 1, high, size);
 	}
 }
 
@@ -69,5 +69,5 @@ void quick_sort(int arr[], int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
-	quick_sort(array, 0, size - 1, size)
+	quickSort(array, 0, size - 1, size);
 }
