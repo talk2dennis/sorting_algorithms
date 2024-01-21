@@ -51,6 +51,16 @@ int partition(int *array, int low, int high, size_t size)
 	return (i + 1);
 }
 
+
+/**
+ * quickSort - A helper function that uses recursion that to partion the array
+ * @array: the list of int
+ * @low: the low index
+ * @high: the high index
+ * @size: the size of the array
+ * Return: nothing
+ */
+
 void quickSort(int *array, int low, int high, size_t size)
 {
 	int index;
@@ -75,5 +85,7 @@ void quickSort(int *array, int low, int high, size_t size)
 
 void quick_sort(int *array, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
 	quickSort(array, 0, size - 1, size);
 }
