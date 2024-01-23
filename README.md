@@ -26,3 +26,13 @@ This GitHub repository is dedicated to the exploration of sorting algorithms, Bi
     Prints the array after each swap.
     3-O: Text file containing the best, average, and worst case time complexities of the Quick Sort Lomuto Partition scheme algorithm, one per line.
 
+
+
+
+4. Shell sort - Knuth Sequence
+
+    100-shell_sort.c: C function that sorts an array of integers in ascending order using the Shell sort algorithm.
+    Implements the Knuth interval sequence.
+    Prints the array each time the interval is decreased.
+
+
