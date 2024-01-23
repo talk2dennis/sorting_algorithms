@@ -10,4 +10,10 @@ This GitHub repository is dedicated to the exploration of sorting algorithms, Bi
     Prints the list after each swap.
     1-O: Text file containing the best, average, and worst case time complexities of the Insertion Sort algorithm, one per line.
 
+2. Selection sort
+
+
+    2-selection_sort.c: C function that sorts an array of integers in ascending order using the Selection Sort algorithm.
+    Prints the array after each swap.
+    2-O: Text file containing the best, average, and worst case time complexities of the Selection Sort algorithm, one per line.
 
