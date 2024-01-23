@@ -13,3 +13,11 @@ void swap_ints(int *m, int *n)
 	*m = *n;
 	*n = tmps;
 }
+
+/**
+ * shell_sort - Sorting an array of int in ascending
+ * order using the shell sort algorithm.
+ * @array: An array of integers.
+ * @size: The size of the array.
+ * Description: Using Knuth interval sequence.
+ */
