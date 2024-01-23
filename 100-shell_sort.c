@@ -5,7 +5,7 @@
  * @m: The first integer to swap.
  * @n: The second integer to swap.
  */
-void swap_ints(int *m, int *n)
+void replace_ints(int *m, int *n)
 {
 	int tmps;
 
@@ -14,8 +14,9 @@ void swap_ints(int *m, int *n)
 	*n = tmps;
 }
 
+
 /**
- * shell_sort - Sorting an array of int in ascending
+ * shell_sort  - Sorting an array of int in ascending
  * order using the shell sort algorithm.
  * @array: An array of integers.
  * @size: The size of the array.
@@ -39,7 +40,7 @@ void shell_sort(int *array, size_t size)
 			k = i;
 			while (k >= gap && array[k - gap] > array[k])
 			{
-				swap_ints(array + k, array + (k - gap));
+				replace_ints(array + k, array + (k - gap));
 				k -= gap;
 			}
 		}
