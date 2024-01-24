@@ -1,19 +1,5 @@
 #include "sort.h"
 
-/**
- * replace_ints - change two int in an array.
- * @m: The first integer to swap.
- * @n: The second integer to swap.
- */
-void replace_ints(int *m, int *n)
-{
-	int tmps;
-
-	tmps = *m;
-	*m = *n;
-	*n = tmps;
-}
-
 
 /**
  * shell_sort  - Sorting an array of int in ascending
@@ -23,27 +9,28 @@ void replace_ints(int *m, int *n)
  * Des: Using Knuth interval seq.
  */
 
+
 void shell_sort(int *array, size_t size)
 {
-	size_t gap, i, k;
+	size_t gap, i, j;
+	int tmp;
 
 	if (array == NULL || size < 2)
 		return;
-
-	for (gap = 1; gap < (size / 3);)
-		gap = gap * 3 + 1;
-
-	for (; gap >= 1; gap /= 3)
+	for (gap = 1; gap <= size / 3; gap = gap * 3 + 1)
+		;
+	while (gap > 0)
 	{
 		for (i = gap; i < size; i++)
 		{
-			k = i;
-			while (k >= gap && array[k - gap] > array[k])
+			tmp = array[i];
+			for (j = i; j >= gap && array[j - gap] > tmp; j -= gap)
 			{
-				replace_ints(array + k, array + (k - gap));
-				k -= gap;
+				array[j] = array[j - gap];
 			}
+			array[j] = tmp;
 		}
 		print_array(array, size);
+		gap /= 3;
 	}
 }
